@@ -69,6 +69,22 @@ In a new terminal, start ngrok:run
 ```ngrok http 8000```
 Copy the HTTPS URL shown : ``` https://chiropodial-matt-penetralian.ngrok-free.dev/docs ```
 
+set up OpenAI key
+https://platform.openai.com
+Login using
+Go to API Keys Page
+After login:
+Click your profile icon (top right corner)
+Select “View API keys”
+Create New API Key
+Click “Create new secret key”
+A new key will be generated (example format):sk-xxxxxxxxxxxxxxxxxxxx
+add api key to .env file
+
+IMPORTANT:
+Copy it immediately
+You will NOT be able to see it again
+
 click on insert text
 example: {"text": "Total: INR 1200 Paid: 1000 Due: 200 Discount: 10%"} / works same for image
 
