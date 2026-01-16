@@ -43,22 +43,66 @@ Client (Text / Image) >> FastAPI Backend >> AI Vision OCR (for Images) >> AI Tex
 
 ---
 
-## Project Structure
-
-
-
----
 
 ## Setup Instructions
 
-### 1. Clone Repository
-
+### 1. Clone Repository and run below commands
+```
 run following commands
 git clone https://github.com/YOUR_USERNAME/ai-document-extractor.git
 cd app
 pip install -r requirements.txt
 uvicorn app:app --reload
+http://127.0.0.1:8000/docs working link
+```
+
+Ngrok Setup Summary (Windows)
+Download ngrok from:
+```https://ngrok.com/download```
+
+Extract ngrok.exe from the ZIP file.
+Move ngrok.exe to C:\Windows\System32 (adds it to PATH).
+Create a free account at https://ngrok.com and copy your Auth Token.
+Run in Command Prompt:
+```ngrok config add-authtoken YOUR_TOKEN```
+
+Start your FastAPI server:
+```uvicorn app:app --reload```
+In a new terminal, start ngrok:run
+```ngrok http 8000```
+Copy the HTTPS URL shown : ``` https://chiropodial-matt-penetralian.ngrok-free.dev/docs ```
+
+click on insert text
+example: {"text": "Total: INR 1200 Paid: 1000 Due: 200 Discount: 10%"} / works same for image
+
+output: {
+  "result": {
+    "currency": "INR",
+    "amounts": [
+      {
+        "type": "Total",
+        "value": 1200,
+        "source": "Total: INR 1200"
+      },
+      {
+        "type": "Paid",
+        "value": 1000,
+        "source": "Paid: 1000"
+      },
+      {
+        "type": "Due",
+        "value": 200,
+        "source": "Due: 200"
+      },
+      {
+        "type": "Discount",
+        "value": 10,
+        "source": "Discount: 10%"
+      }
+    ],
+    "status": "ok"
+  }
+}
 
 
-http://127.0.0.1:8000/docs
 
