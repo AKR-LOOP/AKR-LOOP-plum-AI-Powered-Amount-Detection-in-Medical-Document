@@ -1,15 +1,13 @@
 # AKR-LOOP-plum-AI-Powered-Amount-Detection-in-Medical-Document
 
-# AI Document Extraction Backend API
-
-This project is a FastAPI-based backend that extracts structured financial information from text or images of bills, receipts, and invoices using AI.
+This project is a Fast API-based backend that extracts structured financial information from text or images of bills, receipts, and invoices using AI.
 
 It supports:
 - Text input processing
 - Image input (AI-based OCR using Vision models)
 - Amount extraction
 - Currency detection
-- Context classification (Total, Paid, Due)
+- Context classification (Total, Paid, Due, Dis)
 - Structured JSON output with confidence scoring
 - Guardrail handling for noisy documents
 
@@ -30,7 +28,6 @@ It supports:
 
 Client (Text / Image) >> FastAPI Backend >> AI Vision OCR (for Images) >> AI Text Normalization + Extraction >> Structured JSON Response
 
-
 ---
 
 ## Features
@@ -46,7 +43,7 @@ Client (Text / Image) >> FastAPI Backend >> AI Vision OCR (for Images) >> AI Tex
 
 ## Setup Instructions
 
-### 1. Clone Repository and run below commands
+Clone Repository and run below commands
 ```
 run following commands
 git clone https://github.com/YOUR_USERNAME/ai-document-extractor.git
