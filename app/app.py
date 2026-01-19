@@ -165,11 +165,9 @@ async def upload_file(file: UploadFile = File(...)):
 
     contents = await file.read()
 
-    # If IMAGE → Use AI OCR
     if file.content_type.startswith("image"):
         extracted_text = extract_text_from_image_ai(contents)
 
-    # If TEXT FILE
     else:
         try:
             extracted_text = contents.decode("utf-8")
@@ -179,8 +177,6 @@ async def upload_file(file: UploadFile = File(...)):
     result = process_with_openai(extracted_text)
 
     return {
-        # "status": "success",
         "filename": file.filename,
-        # "extracted_text": extracted_text,
         "result": result
     }
